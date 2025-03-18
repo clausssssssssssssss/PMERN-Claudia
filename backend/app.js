@@ -5,6 +5,7 @@ import customersRoutes from "./src/routes/customers.js";
 import employeeRoutes from "./src/routes/employees.js";
 import branchesRoutes from "./src/routes/branches.js";
 import reviewsRoutes from "./src/routes/reviews.js";
+import evaluationsRoutes from "./src/routes/evaluations.js"
 
 // Creo una constante que es igual a la libreria que importé
 const app = express();
@@ -18,6 +19,7 @@ app.use("/api/customers", customersRoutes);
 app.use("/api/employee", employeeRoutes);
 app.use("/api/branches", branchesRoutes);
 app.use("/api/reviews", reviewsRoutes);
+app.use("/api/evaluations", evaluationsRoutes);
 
 // Exporto la constante para poder usar express en otros archivos
 export default app;

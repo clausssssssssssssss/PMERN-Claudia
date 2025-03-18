@@ -5,12 +5,12 @@ const router = express.Router();
 
 router
   .route("/")
-  .get(evaluationsController.getReviews)
-  .post(evaluationssController.insertReview);
+  .get(evaluationsController.getEvaluations)
+  .post(evaluationsController.insertEvaluations);
 
 router
   .route("/:id")
-  .put(evaluationsController.updateReview)
-  .delete(evaluationsController.deleteReview);
+  .put(evaluationsController.updateEvaluations)
+  .delete(evaluationsController.deleteEvaluations);
 
 export default router;
