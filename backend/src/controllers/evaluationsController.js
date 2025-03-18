@@ -4,7 +4,7 @@ import EvaluationsModel from "../models/Reviews.js";
 
 // SELECT
 EvaluationsController.getEvaluations = async (req, res) => {
-  const evaluations = await EvaluationsModel.find().populate("idCustomers")
+  const evaluations = await EvaluationsModel.find()
   res.json(evaluations);
 };
 
@@ -24,14 +24,14 @@ EvaluationsController.deleteEvaluations = async (req, res) => {
 
 // UPDATE
 EvaluationsController.updateEvaluations = async (req, res) => {
-  const { comment, grade, role, idCustomer } = req.body;
+  const { comment, grade, role, idCustomers } = req.body;
   await EvaluationsModel.findByIdAndUpdate(
     req.params.id,
     {
     comment, 
     grade, 
     role, 
-    idCustomer
+    idCustomers
     },
     { new: true }
   );
