@@ -1,6 +1,6 @@
 //Array de metodos (C R U D)
 const employeeController = {};
-import employeeModel from "../models/employee.js";
+import employeeModel from "../models/Employee.js";
 
 // SELECT
 employeeController.getemployee = async (req, res) => {
