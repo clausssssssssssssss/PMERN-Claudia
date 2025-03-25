@@ -14,7 +14,7 @@ registeremployeesController.register = async (req, res) => {
 
     try{
         //Verificamos que el empleado existe
-        const existEmployee =await employee.findOne({email});
+        const existEmployee =await Employee.findOne({email});
         if(existEmployee){
             return res.json({message : "Employee already exist"});
         }
@@ -45,11 +45,12 @@ registeremployeesController.register = async (req, res) => {
    //2.Clave secreta
    config.JWT.secret,
    //3.caudno expira
-   {expiresIN: config.JWT.expiresIn},
+   {expiresIn: config.JWT.expiresIn},
    //4.Funcion flecha
    (error, token) =>{
        if(error) console.log(error);
    res.cookie("authToken", token);
+   res.json({message: "registrado"})
    }
 
             );

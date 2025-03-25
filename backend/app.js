@@ -8,7 +8,7 @@ import reviewsRoutes from "./src/routes/reviews.js";
 import evaluationsRoutes from "./src/routes/evaluations.js"
 import registeremployeesRoutes from "./src/routes/registeremployees.js"
 import loginRoutes from "./src/routes/login.js"
-
+import logoutRoutes from "./src/routes/logout.js"
 import cookieParser from "cookie-parser";
 
 // Creo una constante que es igual a la libreria que importé
@@ -26,11 +26,10 @@ app.use("/api/employee", employeeRoutes);
 app.use("/api/branches", branchesRoutes);
 app.use("/api/reviews", reviewsRoutes);
 app.use("/api/evaluations", evaluationsRoutes);
-
-
 app.use("/api/registerEmployes", registeremployeesRoutes);
 //Login
 app.use("/api/login", loginRoutes );
+app.use("/api/logout", logoutRoutes);
 
 // Exporto la constante para poder usar express en otros archivos
 export default app;

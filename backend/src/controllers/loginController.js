@@ -59,13 +59,13 @@ if(email === config.emailAdmin.email && password == config.emailAdmin){
   //4.Funcion flecha
   (error, token)=>{
     if(error) console.log(error);
-
     res.cookie("authToken", token)
+    res.json({message: "usuario guardado"})
   }
-  )
+  );
    }catch(error){
-    console.log(error)
+    console.log(error);
    }
-}
+};
 
 export default loginController
